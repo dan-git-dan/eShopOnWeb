@@ -5,11 +5,11 @@ on: workflow_dispatch
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-westeurope
-  LOCATION: westeurope
+  RESOURCE-GROUP: rg-eshoponweb-eastus2
+  LOCATION: eastus2
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: 38451584-5dba-4a1f-bc24-ab1ff3048e53
-  WEBAPP-NAME: devops-webapp-westeurope-53973995
+  WEBAPP-NAME: devops-webapp-eastus2-53973995
 
 
 jobs:
@@ -20,10 +20,10 @@ jobs:
     #checkout the repository
     - uses: actions/checkout@v4
     #prepare runner for desired .net version SDK
-    - name: Setup .NET
+    - name: Setup .NETa
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '8stus2.0.x'
         dotnet-quality: 'preview'
     #Build/Test/Publish the .net project
     - name: Build with dotnet
